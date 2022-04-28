@@ -1,32 +1,34 @@
 import React from 'react'
 import logo from '../static/images/caa_title.png';
 import Search from './Search';
+import {Link, Outlet} from "react-router-dom"
 
 const Header = () => {
   return (
-    <div class = "Header-wrap">
+    <div className = "Header-wrap">
         <div id = "Header">
             <img src={logo} alt="CAA Logo" />
             <div>
-                <div class = "links">
-                    <a>Become a Member</a>
+                <div className = "links">
+                    <Link to="/" className = "link">Become a Member</Link>
                     <hr/>
-                    <a id = "login-link">Login</a>
+                    <Link to="/" id = "login-link" className = "link">Login</Link >
                     <button>Connect Wallet</button>
                 </div>
             </div>
         </div>
         <div id = "Header2">
             <div>
-                <a>Membership</a>
-                <a>Rewards</a>
-                <a>Profile</a>
+                <Link to = "/" className = "link">Membership</Link>
+                <Link to = "/rewards" className = "link">Rewards</Link>
+                <Link to = "/profile" className = "link">Profile</Link>
             </div>
-            <div class = "search-div">
+            <div className = "search-div">
                 <Search/>
 
             </div>
         </div>
+        <Outlet/>
     </div>
     
   )

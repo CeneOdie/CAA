@@ -2,10 +2,12 @@ import React from 'react'
 
 const Card = (cardStyle, title, text) => {
   return (
-    <div class = {cardStyle}>
-        <p>{title}</p>
-        <p>{text}</p>
-    </div>
+    // <div className = {`pageCard ${cardStyle}`}>
+      <div>
+          <p className = "cardTitle">{title}</p>
+          <p className = "cardDesc">{text}</p>
+      {/* </div> */}
+    </div>  
   )
 }
 
