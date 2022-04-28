@@ -20,12 +20,12 @@ body::-webkit-scrollbar {
 :root {
   --blue1 : #1D60C9;
   --grayish : #F4F4F4;
+  --graytext : #949494;
 }
 
 .Header-wrap {
   background-color: red;
   width: 96vw;
-  
   margin: 0;
   padding: 0;
 }
@@ -65,15 +65,11 @@ body::-webkit-scrollbar {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 44px;
   padding-right: 16px;
   padding-left: 16px;
-  /* margin: auto; */
-  /* padding-top: 24px; */
   margin-right: 48px;
-
   margin-left: 0px;
-  /* margin: 39px 0px; */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -91,14 +87,13 @@ body::-webkit-scrollbar {
 #Header div {
   margin-left: auto;
   display: flex;
-  /* justify-content: space-evenly; */
-  /* margin-right: 8vw; */
   height: 64px;
 }
 
 #Header button {
   background-color: white;
-  border: 3px solid var(--blue1);
+  box-sizing: border-box;
+  border: 2px solid var(--blue1);
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -107,9 +102,16 @@ body::-webkit-scrollbar {
   margin-top: auto;
   margin-bottom: auto;
   margin-right: 0px;
-  /* padding: 0px 36px; */
-  height: 44px;
-  width: 176px;
+  height: 50px;
+  width: 180px;
+  transition: 400ms ;
+
+}
+
+#Header button:hover {
+  background: #00308F;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  color: white;
 }
 
 #Header a {
@@ -117,18 +119,31 @@ body::-webkit-scrollbar {
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
-  padding-right: 16px;
-  padding-left: 16px;
-  /* margin: auto; */
-  margin-right: 0px;
-  margin-left: 0px;
-  /* margin: 39px 0px; */
+  margin-left: 28px;
+  margin-right: 28px;
   margin-top: auto;
   margin-bottom: auto;
+  display: inline-block;
+  transition: 300ms;
+  border-bottom: 1px solid transparent;
 }
 
-#login-link {
-  border-left: 2px solid #E5E5E5;;
+#Header a:hover {
+  color: var(--blue1);
+  border-bottom-color: var(--blue1);
+}
+
+#Header div hr {
+  box-sizing: border-box;
+  height: 21px;
+  width: 0;
+  border: none;
+  border-left: 5px solid #E5E5E5;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
 }
 
 
@@ -148,39 +163,64 @@ button {
   justify-content: center;
   color: white;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./static/images/homeCardBackSplash.jpg");
-  background-image: url("./static/images/homeCardBackSplash.jpg");
+  /* background-image: url("./static/images/homeCardBackSplash.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+.cardTitle {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.cardDesc {
+  margin-top: 0;
+  padding-top: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
 
 .search-input {
-  width: 400px;
-  height: 44px;
+  width: 380px;
+  height: 24px;
   border-radius: 0.9vw;
   border: none;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  /* padding: 1vw; */
+  color: var(--graytext);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  transition: 300ms;
+  padding: 10px;
+}
 
+.search-input::placeholder {
+  color:  var(--graytext);
+  transition: 300ms;
+}
+
+.search-input:hover::placeholder {
+  color: black;
+}
+
+.search-input:focus {
+  outline: none;
 }
 
 
 .searchspan {
   float:left;
   margin-left: 16px;
-  /* margin-top: -20px; */
   position: relative;
   z-index: 2;
   color: inherit;
-}
-
-
-.page-content-div {
-  background-color: var(--grayish);
 }
 
 .plan-options {
@@ -193,7 +233,7 @@ button {
 .plan-option {
   width: 310px;
   text-align: center;
-  background-color: white;
+  background-color: white !important;
   border: none;
   border-radius: 1vw;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
@@ -212,6 +252,12 @@ button {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 26px;
+  transition: 300ms;
+}
+
+.plan-options button:hover {
+  background: #00308F;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .plan-option img {
@@ -220,10 +266,8 @@ button {
   margin-bottom: 26px;
   margin-left: auto;
   margin-right: auto;
-
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 15px;
-  /* margin-top: 26px; */
 }
 
 .plan-option div {
@@ -249,7 +293,6 @@ button {
   display: table-cell;
   vertical-align: middle;
   padding: 0;
-  /* width: 5%; */
   font-size: 1.5vw;
 
 }
@@ -260,7 +303,6 @@ button {
 }
 
 .benefit p {
-  /* width: 95%; */
   display: table-cell;
   vertical-align: middle;
   padding-left: 16px;

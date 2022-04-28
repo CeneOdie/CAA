@@ -10,6 +10,7 @@ const Header = () => {
             <div>
                 <div class = "links">
                     <a>Become a Member</a>
+                    <hr/>
                     <a id = "login-link">Login</a>
                     <button>Connect Wallet</button>
                 </div>
