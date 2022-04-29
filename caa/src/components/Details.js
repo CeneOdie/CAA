@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom';
 import basicCard from '../static/images/basic-card.png';
 import plusCard from '../static/images/plus-card.png';
 import premierCard from '../static/images/premier-card.png';
+import { Link } from 'react-router-dom';
 
-const Details = (planName) => {
+const Details = () => {
     const plans = {
         "basic": {  name: "Basic",
                     price: "75",
@@ -57,46 +59,42 @@ const Details = (planName) => {
                         "Vehicle return benefit"]}}
 
 
+    let planName2 = useParams().plan
+    console.log(planName2)
     var selectedplan = {}
     var otherplan1 = {}
     var otherplan2 = {}
     var benComponents = []
     
-    // useEffect(() => { return () => {
-        if (planName.planName === "basic") {
-            selectedplan = plans['basic']
-            otherplan1 = plans['plus']
-            otherplan2 = plans['premier']
-            
-        } else if (planName.planName === "plus") {
-            selectedplan = plans['plus']
-            otherplan1 = plans['basic']
-            otherplan2 = plans['premier']
-    
-        } else if (planName.planName === "premier") {
-            selectedplan = plans['premier']
-            otherplan1 = plans['basic']
-            otherplan2 = plans['plus']
-    
-        }
-    
-        // console.log(selectedplan.name)
-        selectedplan.benefits.map((benefit) => {
-            benComponents.push(
-            <div className = "benefit">
-                <div className = "tick-outer">
-                    <div className = "tick">✓</div>
-                </div>
-                <div className = 'ben-p-outer'>
-                    <p>{benefit}</p>
-                </div>
-            </div>)
-        })
-
-        // console.log(benComponents)
+    if (planName2 === "Basic") {
+        selectedplan = plans['basic']
+        otherplan1 = plans['plus']
+        otherplan2 = plans['premier']
         
-    // };}, [])
-    
+    } else if (planName2 === "Plus") {
+        selectedplan = plans['plus']
+        otherplan1 = plans['basic']
+        otherplan2 = plans['premier']
+
+    } else if (planName2 === "Premier") {
+        selectedplan = plans['premier']
+        otherplan1 = plans['basic']
+        otherplan2 = plans['plus']
+
+    }
+
+    // console.log(selectedplan.name)
+    selectedplan.benefits.map((benefit) => {
+        benComponents.push(
+        <div className = "benefit">
+            <div className = "tick-outer">
+                <div className = "tick">✓</div>
+            </div>
+            <div className = 'ben-p-outer'>
+                <p>{benefit}</p>
+            </div>
+        </div>)
+    })    
 
   return (
     <div>
@@ -109,10 +107,11 @@ const Details = (planName) => {
 
 
         <div className = "selected">
-            <div>
+            <div className='cardCol'>
                 <img src = {selectedplan.imgSrc} alt = {`${selectedplan.name} Card`}/>
+                <button>Join CAA</button>
             </div>
-            <div>
+            <div className='detailCol'>
                 <p className = "plan-title">
                 {selectedplan.name}
                 </p>
@@ -135,7 +134,7 @@ const Details = (planName) => {
                 <div>
                     <p className = "plan-title">{otherplan1.name}</p>
                     <p>{otherplan1.blurb}</p>
-                    <button>Learn More</button>
+                    <Link to = {`/rewards/${otherplan1.name}`}><button>Learn More</button></Link>
                 </div>
             </div>
             <div className = "other2 other-option">
@@ -145,7 +144,7 @@ const Details = (planName) => {
                 <div>
                     <p className = "plan-title">{otherplan2.name}</p>
                     <p>{otherplan2.blurb}</p>
-                    <button>Learn More</button>
+                    <Link to = {`/rewards/${otherplan2.name}`}><button>Learn More</button></Link>
                 </div>
             </div>
         </div>

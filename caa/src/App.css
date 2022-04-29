@@ -292,10 +292,10 @@ button {
 
 .benefit {
   display: flex;
-  margin-top: 10px;
+  margin: 0px 5px;
   width: 100%;
 
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .tick-outer {
@@ -315,15 +315,17 @@ button {
 .ben-p-outer {
   flex: 8 !important;
   display: table;
+  /* margin: 16px auto 0 auto; */
+  line-height: 18px;
 }
 
 .benefit p {
   display: table-cell;
   vertical-align: middle;
-  padding-left: 16px;  
+  padding: 0px;  
   text-align: left;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -354,18 +356,18 @@ button {
 
 .selected {
   width: 641px;
-  margin: 100px auto 0px auto;
+  margin: 100px auto 90px auto;
   border: none;
   padding: 0;
   display: flex;
 }
 
-.selected div .plan-title {
+.detailCol .plan-title {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.selected div .plan-price {
+.detailCol .plan-price {
   margin-top: 24px;
   margin-bottom: 24px;
 }
@@ -384,7 +386,7 @@ button {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 15px;
   width: 260px;
-  height: 160px;
+  /* height: 160px; */
 }
 
 .hr-details {
@@ -395,17 +397,43 @@ button {
   border-bottom: 1px solid var(--grayish);
 }
 
-.selected div {
-  flex:1;
+.detailCol, .cardCol {
+  /* flex:1; */
   display: flex;
   flex-direction: column;
 }
 
+.detailCol {
+  width: 313px;
+}
+
+.cardCol {
+  width: 260px;
+  margin-right: 48px;
+}
+
+.cardCol button {
+  width: 180px;
+  height: 50px;
+  background-color: var(--blue1);
+  color: white;
+  border: none;
+  margin: auto auto 0 auto;
+  transition: 300ms;
+}
+
+.cardCol button:hover {
+  background: var(--blue2);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+
 .other-options {
   display: flex;
   width: 876px;
-  height: 370px;
-  margin: 0 auto 50px auto;
+  /* height: 370px; */
+  margin: 0 auto 0px auto;
   padding: 50px 0;
 }
 
