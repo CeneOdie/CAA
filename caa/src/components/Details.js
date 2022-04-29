@@ -88,7 +88,10 @@ const Details = () => {
         benComponents.push(
         <div className = "benefit">
             <div className = "tick-outer">
-                <div className = "tick">✓</div>
+            <span class="checkmark">
+                  <div class="checkmark_stem"></div>
+                  <div class="checkmark_kick"></div>
+              </span>
             </div>
             <div className = 'ben-p-outer'>
                 <p>{benefit}</p>

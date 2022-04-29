@@ -3,9 +3,14 @@
 .App {
   font-family: Poppins;
   overflow: hidden;
-  width: 100%;
+  width: 100vw;
   background-color: white;
+  
 }
+* {
+  box-sizing: border-box;
+}
+
 
 body {
   overflow-x: hidden;
@@ -20,26 +25,56 @@ body::-webkit-scrollbar {
   --blue2 : #00308F;
   --grayish : #F4F4F4;
   --graytext : #949494;
+  --green: #0E772D;
 }
 
 .Header-wrap {
   background-color: red;
-  width: 96vw;
+  width: 100vw;
   margin: 0;
   padding: 0;
+}
+
+.active{
+  /* height: 4rem;
+  width: 100%; */
+  position: fixed;
+  top: 0px;
+  transition: 0.3s linear;
+  /* display: flex; */
+  justify-content:stretch;
+  align-items: center;
+  background-color: #FFFFFF;
+  /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
+  z-index: 40;
+  /* box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08); */
+  /* padding: 0 7%; */
+}
+
+
+.hidden{
+  /* height: 4rem; */
+  /* width: 100%; */
+  z-index: 40;
+  /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
+  box-shadow: 0 2px 5px -1px rgba(0, 0, 0, .08);
+  position: fixed;
+  top: -172px;
+  transition: 0.3s linear;
+
 }
 
 #Header {
   display: flex;
   padding:  18px 36px;
-  width: 100%;
-  height: 64px;
+  width: 100vw;
+  height: 100px;
   line-height: 21px;
   background-color: white;
 }
 
 #Header img {
-  width: 138px;
+  width: 148px;
   height: 63px;
 }
 
@@ -116,29 +151,31 @@ body::-webkit-scrollbar {
 #Header2 {
   display: flex;
   padding: 14px 48px;
-  width: 100%;
-  height: 44px;
+  width: 100vw;
+  height: 72px;
   background-color: var(--blue1);
   color: white;
   margin-bottom: 0;
 }
 
 #Header2 div {
-  margin-left: 24px;
+  /* margin-left: 24px; */
   display: table;
 }
 
 #Header2 div .link {
+  display: table-cell;
+  vertical-align: middle;
   text-decoration: none;
   color: white;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 44px;
-  padding-right: 16px;
-  padding-left: 16px;
-  margin-right: 48px;
-  margin-left: 0px;
+  line-height: 24px;
+  padding-right: 12px;
+  padding-left: 36px;
+  /* margin-right: 12px;
+  margin-left: 36px; */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -154,15 +191,24 @@ button {
 
 .pageCard {
   display: block;
-  margin-top: 0;
   padding-top: 150px;
-  width: 100%;
-  height: 250px;
+  width: 100vw;
+  height: 400px;
   text-align: center;
   justify-items: center;
   justify-content: center;
   color: white;
 
+}
+
+.active + div .pageCard {
+  margin-top: 172px;
+  transition: 0.3s linear;
+}
+
+.hidden + div .pageCard {
+  margin-top: 0;
+  transition: 0.3s linear;
 }
 
 .homeCardStyle {
@@ -197,8 +243,8 @@ button {
 }
 
 .search-input {
-  width: 380px;
-  height: 24px;
+  width: 400px;
+  height: 44px;
   border-radius: 0.9vw;
   border: none;
   font-weight: 400;
@@ -238,12 +284,13 @@ button {
 .plan-options {
   display: flex;
   justify-content: center;
-  padding: 2vw;
-  padding-top: 200px;
+  /* padding: 2vw; */
+  /* padding-top: 100px; */
 }
 
 .plan-option {
   width: 310px;
+  /* height: 993px; */
   text-align: center;
   background-color: white !important;
   border: none;
@@ -251,8 +298,8 @@ button {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
-  padding: 25px;
-  margin-right: 24px;
+  padding: 36px 25px 26px 25px;
+  margin: 200px 12px 200px 12px;
 }
 
 .plan-options button {
@@ -282,43 +329,87 @@ button {
   border-radius: 15px;
 }
 
-.plan-option div {
+/* .plan-option div {
   border: none;
   margin: 0;
   padding: 0;
   box-shadow: none;
+} */
+
+.benefits {
+  width: 260px;
 }
 
 .benefit {
   display: flex;
-  margin: 0px 5px;
+  margin: 0;
+  margin-bottom: 10px;
   width: 100%;
 }
 
 .tick-outer {
   display: table;
-  flex: 1;
-  width: 18px;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* flex: 1; */
+  width: 24px;
+  height: 18px;
 }
 
-.tick, .tick p {
+/* .tick, .tick p {
   color: green;
   display: table-cell;
   vertical-align: middle;
   padding: 0;
   font-size: 18px;
+} */
+
+.checkmark {
+  display:inline-block;
+  width: 18px;
+  height:18px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
 }
 
+.checkmark_stem {
+  position: absolute;
+  width:2.5px;
+  height:22px;
+  background-color:var(--green);
+  left:8px;
+  top:0px;
+}
+
+.checkmark_kick {
+  position: absolute;
+  width:10px;
+  height:2px;
+  background-color:var(--green);
+  left:0px;
+  top:20px;
+}
+
+
+
 .ben-p-outer {
-  flex: 8 !important;
+  /* flex: 8 !important; */
   display: table;
   line-height: 18px;
+  padding-left: 16px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+  height: fit-content;
 }
 
 .benefit p {
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0px;  
+  /* display: table-cell; */
+  /* vertical-align: middle; */
+  padding: 0px;
+  margin: 0;  
+  width: 200px;
   text-align: left;
   margin-top: auto;
   margin-bottom: auto;
@@ -326,14 +417,15 @@ button {
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .plan-title {
   font-weight:600;
   font-size: 18px;
   line-height: 27px;
-  margin-top: 36px;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .plan-price {
@@ -341,6 +433,8 @@ button {
   font-weight:300;
   font-size: 36px;
   line-height: 36px;
+  padding: 26px;
+  margin: 0px;
 }
 
 .plan-price b {
@@ -352,10 +446,12 @@ button {
 
 .selected {
   width: 641px;
-  margin: 100px auto 90px auto;
+  /* height: 763px; */
+  margin: 100px auto;
   border: none;
   padding: 0;
   display: flex;
+  /* border: 2px solid red; */
 }
 
 .detailCol .plan-title {
@@ -412,7 +508,7 @@ button {
   background-color: var(--blue1);
   color: white;
   border: none;
-  margin: auto auto 0 auto;
+  margin: auto auto 12px auto;
   transition: 300ms;
 }
 
@@ -425,7 +521,7 @@ button {
   display: flex;
   width: 876px;
   margin: 0 auto 0px auto;
-  padding: 50px 0;
+  padding: 50px 0 100px 0;
 }
 
 .other-option {
@@ -462,6 +558,7 @@ button {
 
 .other-option div .plan-title + p {
   margin-top: 24px;
+  margin-bottom: 24px;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
@@ -492,8 +589,8 @@ button {
 }
 
 .profile-card {
-  width: 778px;
-  height: 319px;
+  width: 850px;
+  height: 391px;
   padding: 36px;
   background-color: white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
@@ -511,15 +608,27 @@ button {
 .profile-info {
   display: flex;
   height: 251px;
+  width: 776px;
 }
 
 .profile-options {
   display: flex;
   justify-content: center;
+  margin-top: 18px;
 }
 
 .profile-person {
   margin-left: 80px;
+  width: 379px;
+  height: 205px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.profile-person p {
+  margin: 0 0 0 4px;
 }
 
 .profile-options button + button {
@@ -532,6 +641,10 @@ button {
   background-color: var(--blue1);
   color: white;
   border: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
   transition: 300ms;
 }
 
