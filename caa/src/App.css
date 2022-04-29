@@ -613,12 +613,19 @@ button {
   border-radius: 1.04vw;
   width: 21.81vw;
   height: 13.4vw;
+  margin-left: 2vw;
+  margin-right: auto;
 }
 
 .profile-info {
   display: flex;
   height: 17.64vw;
   width: 53.89vw;
+}
+
+.profile-info div {
+  flex: 1;
+  /* justify-content: ; */
 }
 
 .profile-options {
@@ -628,7 +635,7 @@ button {
 }
 
 .profile-person {
-  margin-left: 5.56vw;
+  /* margin-left: 5.56vw; */
   width: 26.32vw;
   height: 14.24vw;
   font-style: normal;

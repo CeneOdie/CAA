@@ -26,7 +26,9 @@ const Profile = (user) => {
         <div className='profile-div'>
             <div className='profile-card'>
                 <div className='profile-info'>
-                    <img src={cardImg} alt = {`${profileUser.tier} Card`}/>
+                    <div>
+                        <img src={cardImg} alt = {`${profileUser.tier} Card`}/>
+                    </div>
                     <div className='profile-person'>
                         <p>Name: {profileUser.name}</p>
                         <p>Membership: {profileUser.membership}</p>
