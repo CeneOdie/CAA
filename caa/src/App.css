@@ -36,27 +36,18 @@ body::-webkit-scrollbar {
 }
 
 .active{
-  /* height: 4rem;
-  width: 100%; */
   position: fixed;
   top: 0;
   transition: 0.3s linear;
-  /* display: flex; */
   justify-content:stretch;
   align-items: center;
   background-color: #FFFFFF;
-  /* border-bottom: 0.07vw solid rgba(0, 0, 0, .1); */
   z-index: 40;
-  /* box-shadow: 0 0.14vw 0.35vw -0.07vw rgba(0, 0, 0, .08); */
-  /* padding: 0 7%; */
 }
 
 
 .hidden{
-  /* height: 4rem; */
-  /* width: 100%; */
   z-index: 40;
-  /* border-bottom: 0.07vw solid rgba(0, 0, 0, .1); */
   box-shadow: 0 0.14vw 0.35vw -0.07vw rgba(0, 0, 0, .08);
   position: fixed;
   top: -11.94vw;
@@ -158,7 +149,6 @@ body::-webkit-scrollbar {
 }
 
 #Header2 div {
-  /* margin-left: 1.67vw; */
   display: table;
 }
 
@@ -173,8 +163,6 @@ body::-webkit-scrollbar {
   line-height: 1.67vw;
   padding-right: 0.83vw;
   padding-left: 2.5vw;
-  /* margin-right: 0.83vw;
-  margin-left: 2.5vw; */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -283,14 +271,11 @@ button {
 
 .plan-options {
   display: flex;
-  justify-content: center;
-  /* padding: 2vw; */
-  /* padding-top: 6.94vw; */
+  justify-content: center;  
 }
 
 .plan-option {
   width: 21.53vw;
-  /* height: 990.21vw; */
   text-align: center;
   background-color: white !important;
   border: none;
@@ -335,13 +320,6 @@ button {
   border-radius: 1.04vw;
 }
 
-/* .plan-option div {
-  border: none;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-} */
-
 .benefits {
   width: 18.06vw;
 }
@@ -357,18 +335,9 @@ button {
   display: table;
   margin-top: auto;
   margin-bottom: auto;
-  /* flex: 1; */
   width: 1.67vw;
   height: 1.25vw;
 }
-
-/* .tick, .tick p {
-  color: green;
-  display: table-cell;
-  vertical-align: middle;
-  padding: 0;
-  font-size: 1.25vw;
-} */
 
 .checkmark {
   display:inline-block;
@@ -400,7 +369,6 @@ button {
 
 
 .ben-p-outer {
-  /* flex: 8 !important; */
   display: table;
   line-height: 1.25vw;
   padding-left: 1.11vw;
@@ -411,8 +379,6 @@ button {
 }
 
 .benefit p {
-  /* display: table-cell; */
-  /* vertical-align: middle; */
   padding: 0;
   margin: 0;  
   width: 13.89vw;
@@ -452,12 +418,10 @@ button {
 
 .selected {
   width: 44.51vw;
-  /* height: 760.21vw; */
   margin: 6.94vw auto;
   border: none;
   padding: 0;
   display: flex;
-  /* border: 0.14vw solid red; */
 }
 
 .detailCol .plan-title {

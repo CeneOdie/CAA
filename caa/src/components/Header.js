@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
 import logo from '../static/images/caa_title.png';
 import Search from './Search';
 import {Link, Outlet} from "react-router-dom"

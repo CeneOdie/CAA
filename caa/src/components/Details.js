@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom';
 import basicCard from '../static/images/basic-card.png';
 import plusCard from '../static/images/plus-card.png';
@@ -83,7 +83,6 @@ const Details = () => {
 
     }
 
-    // console.log(selectedplan.name)
     selectedplan.benefits.map((benefit) => {
         benComponents.push(
         <div className = "benefit">
@@ -151,52 +150,6 @@ const Details = () => {
                 </div>
             </div>
         </div>
-
-        {/* <div className = "plan-options">
-          <div className = "plan-option">
-            <p className = "plan-title">
-              Basic
-            </p>
-            <p className = "plan-price">
-              $75/<b>year</b>
-            </p>
-            <img src = {basicCard} alt = "BasicCard"/>
-            <button>Join Now</button>
-            <div className = "benefits">
-              <div className = "benefit">
-                <div className = "tick-outer"><div className = "tick">✓</div></div><div className = 'ben-p-outer'><p></p></div>
-              </div>
-            </div>            
-          </div>
-          <div className = "plan-option">
-          <p className = "plan-title">
-              Plus
-            </p>
-            <p className = "plan-price">
-              $119/<b>year</b>
-            </p>
-            <img src = {plusCard} alt = "BasicCard"/>
-            <button>Join Now</button>
-            <div className = "benefits">
-              
-            </div> 
-          </div>
-          <div className = "plan-option">
-          <p className = "plan-title">
-              Premier
-            </p>
-            <p className = "plan-price">
-              $149/<b>year</b>
-            </p>
-            <img src = {premierCard} alt = "BasicCard"/>
-            <button>Join Now</button>
-            <div className = "benefits">
-              
-            </div> 
-          </div>
-
-
-        </div>  */}
     </div>
   )
 }
