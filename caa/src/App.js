@@ -13,6 +13,16 @@ import {
 } from "react-router-dom";
 
 function App() {
+
+  var test_user = {
+    name: "Pat Martin",
+    membership: "620 282 1234567 000",
+    expiry_date: "08/31/2022",
+    caa_balance: 254.21, 
+    tier: "Basic"
+  }
+
+
   return (
     <Router>
       <div className="App">
@@ -22,7 +32,7 @@ function App() {
           <Route exact path="/" element={<Home/>} />
           {/* <Route exact path="/rewards" element={<Details planName = "basic"/>} /> */}
           <Route path="/rewards/:plan" element={<Details />} />
-          <Route exact path="/profile" element={<Profile/>} />
+          <Route exact path="/profile" element={<Profile user = {test_user}/>} />
         </Routes>
 
         {/* <Home/> */}
