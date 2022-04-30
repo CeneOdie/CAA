@@ -136,7 +136,7 @@ const Details = () => {
                 <div>
                     <p className = "plan-title">{otherplan1.name}</p>
                     <p>{otherplan1.blurb}</p>
-                    <Link to = {`/rewards/${otherplan1.name}`}><button>Learn More</button></Link>
+                    <Link to = {`/details/${otherplan1.name}`}><button>Learn More</button></Link>
                 </div>
             </div>
             <div className = "other2 other-option">
@@ -146,7 +146,7 @@ const Details = () => {
                 <div>
                     <p className = "plan-title">{otherplan2.name}</p>
                     <p>{otherplan2.blurb}</p>
-                    <Link to = {`/rewards/${otherplan2.name}`}><button>Learn More</button></Link>
+                    <Link to = {`/details/${otherplan2.name}`}><button>Learn More</button></Link>
                 </div>
             </div>
         </div>

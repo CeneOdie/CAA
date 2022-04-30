@@ -478,7 +478,7 @@ button {
   background-color: var(--blue1);
   color: white;
   border: none;
-  margin: auto auto 0.83vw auto;
+  margin: auto auto 1.5vw auto;
   transition: 300ms;
   font-style: normal;
   font-weight: 400;

@@ -49,7 +49,7 @@ const Header = () => {
         <div id = "Header2">
             <div>
                 <Link to = "/" className = "link">Membership</Link>
-                <Link to = "/rewards/Basic" className = "link">Rewards</Link>
+                <Link to = "/" className = "link">Rewards</Link>
                 <Link to = "/profile" className = "link">Profile</Link>
             </div>
             <div className = "search-div">

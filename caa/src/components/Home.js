@@ -2,6 +2,7 @@ import React from 'react'
 import basicCard from '../static/images/basic-card.png';
 import plusCard from '../static/images/plus-card.png';
 import premierCard from '../static/images/premier-card.png';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -22,8 +23,8 @@ const Home = () => {
             <p className = "plan-price">
               $75<b>/year</b>
             </p>
-            <img src = {basicCard} alt = "BasicCard"/>
-            <button>Join Now</button>
+            <img src = {basicCard} alt = "Basic Card"/>
+            <Link to="/details/Basic"><button>Join Now</button></Link>
             <div className = "benefits">
               <div className = "benefit">
               
@@ -108,7 +109,7 @@ const Home = () => {
               $119<b>/year</b>
             </p>
             <img src = {plusCard} alt = "BasicCard"/>
-            <button>Join Now</button>
+            <Link to="/details/Plus"><button>Join Now</button></Link>
             <div className = "benefits">
               <div className = "benefit">
                 <div className = "tick-outer">
@@ -227,8 +228,8 @@ const Home = () => {
             <p className = "plan-price">
               $149<b>/year</b>
             </p>
-            <img src = {premierCard} alt = "BasicCard"/>
-            <button>Join Now</button>
+            <img src = {premierCard} alt = "Premier Card"/>
+            <Link to="/details/Premier"><button>Join Now</button></Link>
             <div className = "benefits">
               <div className = "benefit">
                 <div className = "tick-outer">
