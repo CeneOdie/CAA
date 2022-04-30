@@ -108,7 +108,7 @@ const Home = () => {
             <p className = "plan-price">
               $119<b>/year</b>
             </p>
-            <img src = {plusCard} alt = "BasicCard"/>
+            <img src = {plusCard} alt = "Plus Card"/>
             <Link to="/details/Plus"><button>Join Now</button></Link>
             <div className = "benefits">
               <div className = "benefit">
